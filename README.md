@@ -21,7 +21,7 @@
 * Various other extensions (like SimpleXML)
 * MySQL CLI
 
-This image is built on GitHub actions and hosted on the GitHub Docker images repo. It is also available under `khromov/alpine-nginx-php8` on Docker Hub.
+This image is built on GitHub actions and hosted on the GitHub Docker images repo. It is also available under `khromov/alpine-nginx-php8` on [Docker Hub](https://hub.docker.com/r/khromov/alpine-nginx-php8).
 
 ### Usage
 
