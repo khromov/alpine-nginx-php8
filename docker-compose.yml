@@ -1,26 +1,36 @@
-version: '3.3'
+version: "3.3"
 
 services:
-   db:
-     image: mysql:8
-     command: --default-authentication-plugin=mysql_native_password
-     volumes:
-       - ./data:/var/lib/mysql
-     environment:
-       MYSQL_ROOT_PASSWORD: wp
-       MYSQL_DATABASE: wp
-       MYSQL_USER: wp
-       MYSQL_PASSWORD: wp
-     cap_add:
-      - SYS_NICE  # CAP_SYS_NICE
-
-   wp:
-     depends_on:
-       - db
-     volumes:
-        - ./src-compose:/var/www/html
-     build: .
-     ports:
-       - "8080:8080"
-     environment:
-       FOO: bar
+  web:
+    depends_on:
+      - db
+    volumes:
+      - ./src-compose:/var/www/html
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      FOO: bar
+  db:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: app
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app
+    cap_add:
+      - SYS_NICE # CAP_SYS_NICE
+  pma:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: app
+      PMA_PASSWORD: app
+      MYSQL_ROOT_PASSWORD: app

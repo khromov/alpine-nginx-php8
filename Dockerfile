@@ -8,9 +8,12 @@ RUN apk --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing add php8
     php8-mbstring php8-gd nginx supervisor curl php8-exif php8-zip tzdata htop mysql-client && \
     rm /etc/nginx/conf.d/default.conf
 
+# Symling php8 => php
+RUN ln -s /usr/bin/php8 /usr/bin/php
+
 # Install PHP tools
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
-RUN php8 -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php8 composer-setup.php --install-dir=/usr/local/bin --filename=composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 # Configure nginx
 COPY config/nginx.conf /etc/nginx/nginx.conf

@@ -25,22 +25,24 @@ This image is built on GitHub actions and hosted on the GitHub Docker images rep
 
 ### Usage
 
-Fetch the prebuilt image in `docker-compose.yml` 
+Fetch the prebuilt image in your custom images:
+
+Docker Hub:
+
+```
+docker pull khromov/alpine-nginx-php8
+```
+
+GitHub:
 ```
 FROM docker.pkg.github.com/khromov/alpine-nginx-php8/alpine-nginx-php8
 ```
 
-Or just fetch it:
-
-```
-docker pull docker.pkg.github.com/khromov/alpine-nginx-php8/alpine-nginx-php8
-```
-
 If you get "no basic auth credentials", see [this page](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages).
 
-#### Start Nginx, PHP and MySQL via Docker-compose
+#### Start Nginx, PHP and MySQL via docker-compose
 
-This is convenient for developing Laravel, WordPress or Drupal sites.
+This is convenient for developing Laravel, WordPress or Drupal sites. It includes MySQL and phpMyAdmin
 
 ```
 docker-compose up
@@ -49,6 +51,10 @@ docker-compose up
 Now you can access your site at http://localhost:8080 and the MySQL database at `db:3306`.
 
 The folder `./src-compose` will be created and you can put your project files there.
+
+The urls are:
+* Web: http://localhost:8080
+* phpMyAdmin: http://localhost:8081
 
 ###### File permission issues
 
