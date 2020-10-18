@@ -11,6 +11,8 @@ services:
        MYSQL_DATABASE: wp
        MYSQL_USER: wp
        MYSQL_PASSWORD: wp
+     cap_add:
+      - SYS_NICE  # CAP_SYS_NICE
 
    wp:
      depends_on:
