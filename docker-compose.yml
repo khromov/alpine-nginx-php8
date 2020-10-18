@@ -1,0 +1,24 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:8
+     command: --default-authentication-plugin=mysql_native_password
+     volumes:
+       - ./data:/var/lib/mysql
+     environment:
+       MYSQL_ROOT_PASSWORD: wp
+       MYSQL_DATABASE: wp
+       MYSQL_USER: wp
+       MYSQL_PASSWORD: wp
+
+   wp:
+     depends_on:
+       - db
+     volumes:
+        - ./src-compose:/var/www/html
+     build: .
+     ports:
+       - "8080:8080"
+     environment:
+       FOO: bar
