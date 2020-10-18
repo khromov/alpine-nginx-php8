@@ -50,6 +50,17 @@ Now you can access your site at http://localhost:8080 and the MySQL database at 
 
 The folder `./src-compose` will be created and you can put your project files there.
 
+###### File permission issues
+
+If you copied files into `./src-compose` you need to run:
+
+```
+sudo chown -R nobody:nogroup ./src-compose
+sudo chmod -R 777 ./src-compose
+```
+
+This makes sure that the files have the correct owner inside the container but remain writable outside of it.
+
 #### Quick build / run
 
 ```
