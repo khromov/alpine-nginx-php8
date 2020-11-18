@@ -35,7 +35,7 @@ docker pull khromov/alpine-nginx-php8
 
 GitHub:
 ```
-FROM docker.pkg.github.com/khromov/alpine-nginx-php8/alpine-nginx-php8
+docker pull docker.pkg.github.com/khromov/alpine-nginx-php8/alpine-nginx-php8
 ```
 
 If you get "no basic auth credentials", see [this page](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages).
