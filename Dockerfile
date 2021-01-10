@@ -5,7 +5,8 @@ LABEL Maintainer="Stanislav Khromov <stanislav+github@khromov.se>" \
 # Install packages and remove default server definition
 RUN apk --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing add php8 php8-fpm php8-opcache php8-mysqli php8-json \
     php8-openssl php8-curl php8-soap php8-zlib php8-xml php8-phar php8-intl php8-dom php8-xmlreader php8-ctype php8-session php8-simplexml \
-    php8-mbstring php8-gd nginx supervisor curl php8-exif php8-zip tzdata htop mysql-client && \
+    php8-mbstring php8-gd nginx supervisor curl php8-exif php8-zip php8-fileinfo php8-iconv php8-soap tzdata htop mysql-client \
+    php8-pecl-imagick php8-pecl-redis && \
     rm /etc/nginx/conf.d/default.conf
 
 # Symling php8 => php
