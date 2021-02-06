@@ -1,4 +1,4 @@
-# Docker PHP-FPM 8.0.2 & Nginx 1.18 on Alpine Linux
+# Docker PHP-FPM 8.0 & Nginx 1.18 on Alpine Linux
 
 * Built on the lightweight and secure Alpine Linux distribution
 * Very small Docker image size (+/-35MB)
