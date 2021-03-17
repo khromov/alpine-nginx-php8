@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it alpine-nginx-php8_web_1 sh
+docker exec -it khromov_php8 sh

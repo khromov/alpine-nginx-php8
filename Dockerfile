@@ -2,14 +2,39 @@ FROM alpine:3.13
 LABEL Maintainer="Stanislav Khromov <stanislav+github@khromov.se>" \
       Description="Lightweight container with Nginx 1.18 & PHP-FPM 8 based on Alpine Linux."
 
-# Install packages and remove default server definition
-RUN apk --no-cache add php8=8.0.2-r0 php8-fpm php8-opcache php8-mysqli php8-json \
-    php8-openssl php8-curl php8-soap php8-zlib php8-xml php8-phar php8-intl php8-dom php8-xmlreader php8-ctype php8-session php8-simplexml \
-    php8-mbstring php8-gd nginx supervisor curl php8-exif php8-zip php8-fileinfo php8-iconv php8-soap tzdata htop mysql-client \
-    php8-pecl-imagick php8-pecl-redis && \
-    rm /etc/nginx/conf.d/default.conf
+ARG PHP_VERSION="8.0.2-r0"
 
-# Symling php8 => php
+# Install packages and remove default server definition
+RUN apk --no-cache add php8=${PHP_VERSION} \
+    php8-ctype \
+    php8-curl \
+    php8-dom \
+    php8-exif \
+    php8-fileinfo \
+    php8-fpm \
+    php8-gd \
+    php8-iconv \
+    php8-intl \
+    php8-mbstring \
+    php8-mysqli \
+    php8-opcache \
+    php8-openssl \
+    php8-pecl-imagick \
+    php8-pecl-redis \
+    php8-phar \
+    php8-session \
+    php8-simplexml \
+    php8-soap \
+    php8-soap \
+    php8-xml \
+    php8-xmlreader \
+    php8-zip \
+    php8-zlib \
+    nginx supervisor curl tzdata htop mysql-client
+    
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Symlink php8 => php
 RUN ln -s /usr/bin/php8 /usr/bin/php
 
 # Install PHP tools

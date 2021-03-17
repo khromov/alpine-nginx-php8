@@ -2,6 +2,7 @@ version: "3.3"
 
 services:
   web:
+    container_name: khromov_php8
     depends_on:
       - db
     volumes:
