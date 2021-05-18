@@ -25,7 +25,6 @@ RUN apk --no-cache add php8=${PHP_VERSION} \
     php8-session \
     php8-simplexml \
     php8-soap \
-    php8-soap \
     php8-xml \
     php8-xmlreader \
     php8-zip \
