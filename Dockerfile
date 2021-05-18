@@ -30,7 +30,11 @@ RUN apk --no-cache add php8=${PHP_VERSION} \
     php8-xmlreader \
     php8-zip \
     php8-zlib \
-    nginx supervisor curl tzdata htop mysql-client
+    php8-pdo \
+    php8-xmlwriter \
+    php8-tokenizer \
+    php8-pdo_mysql
+    nginx supervisor curl tzdata htop mysql-client dcron
     
 RUN rm /etc/nginx/conf.d/default.conf
 
