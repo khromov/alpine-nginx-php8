@@ -2,7 +2,7 @@ FROM alpine:3.13
 LABEL Maintainer="Stanislav Khromov <stanislav+github@khromov.se>" \
       Description="Lightweight container with Nginx 1.18 & PHP-FPM 8 based on Alpine Linux."
 
-ARG PHP_VERSION="8.0.2-r0"
+ARG PHP_VERSION="8.0.8-r0"
 
 # Install packages and remove default server definition
 RUN apk --no-cache add php8=${PHP_VERSION} \
