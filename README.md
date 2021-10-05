@@ -27,18 +27,23 @@ This image is built on GitHub actions and hosted on the GitHub Docker images rep
 
 Fetch the prebuilt image in your custom images:
 
+GitHub (preferred):
+
+```
+docker pull ghcr.io/khromov/alpine-nginx-php8/alpine-nginx-php8:latest
+```
+
+If you get "no basic auth credentials", see [this page](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages).
+
+
 Docker Hub:
 
 ```
 docker pull khromov/alpine-nginx-php8
 ```
 
-GitHub:
-```
-docker pull docker.pkg.github.com/khromov/alpine-nginx-php8/alpine-nginx-php8
-```
+Not preferred since the image is not up to date due to Docker removing free build CI. PR welcome to add a GitHub action for pushing images to Docker Hub directly.
 
-If you get "no basic auth credentials", see [this page](https://docs.github.com/en/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages).
 
 #### Start Nginx, PHP and MySQL via docker-compose
 
@@ -70,8 +75,8 @@ This makes sure that the files have the correct owner inside the container but r
 #### Quick build / run
 
 ```
-docker build . -t php 
-docker run -p 8080:8080 -t php
+docker build . -t php8
+docker run -p 8080:8080 -t php8
 ```
 
 Go to:  
