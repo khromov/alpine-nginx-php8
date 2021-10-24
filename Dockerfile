@@ -34,8 +34,6 @@ RUN apk --no-cache add php8=${PHP_VERSION} \
     php8-tokenizer \
     php8-pdo_mysql \
     nginx supervisor curl tzdata htop mysql-client dcron
-    
-RUN rm /etc/nginx/conf.d/default.conf
 
 # Symlink php8 => php
 RUN ln -s /usr/bin/php8 /usr/bin/php
