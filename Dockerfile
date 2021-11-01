@@ -4,6 +4,9 @@ LABEL Maintainer="Stanislav Khromov <stanislav+github@khromov.se>" \
 
 ARG PHP_VERSION="8.0.12-r0"
 
+# https://github.com/wp-cli/wp-cli/issues/3840
+ENV PAGER="more"
+
 # Install packages and remove default server definition
 RUN apk --no-cache add php8=${PHP_VERSION} \
     php8-ctype \
