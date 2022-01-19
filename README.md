@@ -1,4 +1,4 @@
-# Docker PHP-FPM 8.0 & Nginx 1.18 on Alpine Linux
+# Docker PHP-FPM 8.0 & Nginx 1.20 on Alpine Linux
 
 * Built on the lightweight and secure Alpine Linux distribution
 * Very small Docker image size (+/-35MB)
@@ -9,7 +9,7 @@
 * The logs of all the services are redirected to the output of the Docker container (visible with `docker logs -f <container name>`)
 * Follows the KISS principle (Keep It Simple, Stupid) to make it easy to understand and adjust the image to your needs
 
-![nginx 1.18.0](https://img.shields.io/badge/nginx-1.18-brightgreen.svg)
+![nginx 1.20.0](https://img.shields.io/badge/nginx-1.20-brightgreen.svg)
 ![php 8](https://img.shields.io/badge/php-8-brightgreen.svg)
 ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
