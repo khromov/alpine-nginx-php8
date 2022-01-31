@@ -42,9 +42,6 @@ Docker Hub:
 docker pull khromov/alpine-nginx-php8
 ```
 
-Not preferred since the image is not up to date due to Docker removing free build CI. PR welcome to add a GitHub action for pushing images to Docker Hub directly.
-
-
 #### Start Nginx, PHP and MySQL via docker-compose
 
 This is convenient for developing Laravel, WordPress or Drupal sites. It includes MySQL and phpMyAdmin
