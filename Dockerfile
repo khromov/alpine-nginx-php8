@@ -1,8 +1,8 @@
-FROM alpine:3.15
+FROM alpine:3.16
 LABEL Maintainer="Stanislav Khromov <stanislav+github@khromov.se>" \
-      Description="Lightweight container with Nginx 1.20 & PHP-FPM 8 based on Alpine Linux."
+      Description="Lightweight container with Nginx 1.22 & PHP-FPM 8 based on Alpine Linux."
 
-ARG PHP_VERSION="8.0.17-r0"
+ARG PHP_VERSION="8.0.21-r0"
 
 # https://github.com/wp-cli/wp-cli/issues/3840
 ENV PAGER="more"
@@ -40,7 +40,7 @@ RUN apk --no-cache add php8=${PHP_VERSION} \
     nginx supervisor curl tzdata htop mysql-client dcron
 
 # Symlink php8 => php
-RUN ln -s /usr/bin/php8 /usr/bin/php
+# RUN ln -s /usr/bin/php8 /usr/bin/php
 
 # Install PHP tools
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
