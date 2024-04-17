@@ -43,5 +43,5 @@ jobs:
           context: .
           platforms: linux/amd64, linux/arm64 
           push: true
-          tags: khromov/alpine-nginx-php8:latest
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
