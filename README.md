@@ -3,8 +3,8 @@
 * Built on the lightweight and secure Alpine Linux distribution
 * Very small Docker image size (+/-35MB)
 * Uses PHP 8 for better performance, lower CPU usage & memory footprint
-* Optimized for 100 concurrent users
-* Optimized to only use resources when there's traffic (by using PHP-FPM's on-demand PM)
+* Optimized for ~20 concurrent users
+* Optimized to use low amount of resources when there's no traffic (by using PHP-FPM's on-demand PM)
 * The servers Nginx, PHP-FPM and supervisord run under a non-privileged user (nobody) to make it more secure
 * The logs of all the services are redirected to the output of the Docker container (visible with `docker logs -f <container name>`)
 * Follows the KISS principle (Keep It Simple, Stupid) to make it easy to understand and adjust the image to your needs
