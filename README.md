@@ -1,4 +1,4 @@
-# Docker PHP-FPM 8.4 & Nginx 1.26 on Alpine Linux
+# Docker PHP-FPM 8.4 & Nginx 1.28 on Alpine Linux
 
 - Built on the lightweight and secure Alpine Linux distribution
 - Uses PHP 8.4 for better performance, lower CPU usage & memory footprint
@@ -7,7 +7,7 @@
 - The logs of all the services are redirected to the output of the Docker container (visible with `docker logs -f <container name>`)
 - Follows the KISS principle (Keep It Simple, Stupid) to make it easy to understand and adjust the image to your needs
 
-![nginx 1.26.0](https://img.shields.io/badge/nginx-1.22-brightgreen.svg)
+![nginx 1.28.0](https://img.shields.io/badge/nginx-1.28-brightgreen.svg)
 ![php 8.4](https://img.shields.io/badge/php-8.4-brightgreen.svg)
 ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
