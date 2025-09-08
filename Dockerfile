@@ -1,8 +1,8 @@
 FROM alpine:3.22
 LABEL Maintainer="Stanislav Khromov <stanislav+github@khromov.se>" \
-      Description="Lightweight container with Nginx 1.26 & PHP-FPM 8.4 based on Alpine Linux."
+      Description="Lightweight container with Nginx & PHP-FPM 8.4 based on Alpine Linux."
 
-ARG PHP_VERSION="8.4.10-r0"
+ARG PHP_VERSION="8.4.11-r0"
 
 # https://github.com/wp-cli/wp-cli/issues/3840
 ENV PAGER="more"
